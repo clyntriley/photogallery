@@ -1,5 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:photo_gallery/Screens/photo_gallery_main_screen.dart';
+import 'package:photo_gallery/View/photo_gallery_main_screen.dart';
 
 class MySignupApp extends StatelessWidget {
   const MySignupApp({Key? key}) : super(key: key);
@@ -30,7 +31,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,15 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 const Padding(
                   padding: EdgeInsets.all(10),
                   child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'User Name',
-                    ),
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.all(10),
-                  child: TextField(
+
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Email',
@@ -67,17 +59,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
+
                 const Padding(
                   padding: EdgeInsets.all(10),
                   child: TextField(
                     obscureText: true,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'Re-type Password',
+                      labelText: ' Re-type Password',
                     ),
                   ),
                 ),
-
 
                 ElevatedButton(
                   onPressed: () {
