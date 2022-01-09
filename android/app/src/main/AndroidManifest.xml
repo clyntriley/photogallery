@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.photo_gallery">
    <application
+       android:usesCleartextTraffic = "true"
        android:name="androidx.multidex.MultiDexApplication" >
         android:label="photo_gallery"
         android:icon="@mipmap/ic_launcher">

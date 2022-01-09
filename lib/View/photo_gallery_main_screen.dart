@@ -45,8 +45,8 @@ class _MyHomePageState extends State<MyHomePage> {
             );
 
             if (results == null) {
-              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('no omage selected')),);
-            return null;
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('no image selected')),);
+            return;
             }
 
             final path = results.files.single.path!;

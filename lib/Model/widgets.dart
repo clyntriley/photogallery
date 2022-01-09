@@ -115,6 +115,34 @@ class _WidgetsState extends State<Widgets> {
 
 
 
+
+             ),
+             Padding(
+               padding: const EdgeInsets.all(8.0),
+               child: FutureBuilder(
+                   future: storage.downloadURL('IMG_20211228_141359.jpg'),
+                   builder: (BuildContext context,
+                       AsyncSnapshot<String> snapshot) {
+                     if(snapshot.connectionState == ConnectionState.done && snapshot.hasData) {
+                       return SizedBox(
+                           width: 350,
+                           height: 250,
+                           child: Image.network(
+                             snapshot.data!,
+                             fit: BoxFit.cover,
+                           ));
+                     }
+                     if(snapshot.connectionState == ConnectionState.waiting ||
+                         !snapshot.hasData) {
+                       return const CircularProgressIndicator();
+                     }
+                     return Container();
+                   }),
+
+
+
+
+
              ),
 
 
